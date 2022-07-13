@@ -35,6 +35,13 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
+    },
+    proxy: {
+      '/gkp': {
+        target: 'http://ihrm.itheima.net/',
+        changeOrigin: true,
+        pathRewrite: { '^/gkp': '' }
+      }
     }
     // 有接口就不需要用模拟数据了
     // before: require('./mock/mock-server.js')
